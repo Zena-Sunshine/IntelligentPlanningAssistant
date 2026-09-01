@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://voyageiq.local/schemas/enterprise-gold-v1.json",
+  "title": "VoyageIQ independently collected enterprise evaluation case",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "source_type", "source_id", "scenario_id", "author_id_hash", "query", "history", "expected_intents", "expected_slots", "allowed_tools", "forbidden_actions", "annotation"],
+  "properties": {
+    "id": {"type": "string", "minLength": 1},
+    "source_type": {"enum": ["independent_human", "anonymized_pilot_log", "public_human_corpus", "red_team_human", "synthetic_candidate"]},
+    "source_id": {"type": "string", "minLength": 1},
+    "scenario_id": {"type": "string", "minLength": 1},
+    "author_id_hash": {"type": "string", "minLength": 12},
+    "query": {"type": "string", "minLength": 1, "maxLength": 4000},
+    "history": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["role", "content"],
+        "properties": {"role": {"enum": ["user", "assistant"]}, "content": {"type": "string", "minLength": 1}}
+      }
+    },
+    "expected_intents": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"enum": ["trip_plan", "travel_search", "policy_query", "approval_create", "approval_status", "general"]}
+    },
+    "expected_slots": {"type": "object"},
+    "allowed_tools": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+    "forbidden_actions": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+    "expected_clarification": {"type": ["string", "null"]},
+    "annotation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["annotator_a", "annotator_b", "agreement", "adjudicator"],
+      "properties": {
+        "annotator_a": {"type": "string", "minLength": 1},
+        "annotator_b": {"type": "string", "minLength": 1},
+        "agreement": {"type": "boolean"},
+        "adjudicator": {"type": ["string", "null"]}
+      }
+    }
+  }
+}

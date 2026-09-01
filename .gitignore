@@ -1,0 +1,55 @@
+# Local / OS
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.iml
+*.log
+*.pid
+$null
+_NUL
+
+# Secrets
+.env
+**/.env
+
+# Workspace junk and local captures
+.shots/
+chrome_headless_profile/
+data/
+home_big.png
+
+# Root Java prototype and scripts (not part of VoyageIQ)
+/src/
+/target/
+/pom.xml
+/java_boot.ps1
+/start-server.ps1
+/build_interview_pdf.py
+/build_ppt.py
+/genpdf.ps1
+
+# Learning / interview / presentation materials
+*面试*
+*讲稿*
+*八股*
+*答辩*
+*论文*
+*.pdf
+*.pptx
+*.docx
+
+# Python / Node / Java build
+**/.venv/
+**/node_modules/
+**/target/
+**/.pytest_cache/
+**/.coverage
+**/htmlcov/
+**/__pycache__/
+**/*.pyc
+**/*.egg-info/
+**/.vite/
+**/dist/
+**/test-results/
+**/playwright-report/

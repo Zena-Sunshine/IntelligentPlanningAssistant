@@ -1,0 +1,49 @@
+# Frontend
+web/node_modules/
+web/dist/
+web/.vite/
+web/test-results/
+web/playwright-report/
+
+# Python
+agent-service/.venv/
+agent-service/.pytest_cache/
+agent-service/.coverage
+agent-service/htmlcov/
+agent-service/**/__pycache__/
+agent-service/**/*.pyc
+
+# Java
+business-service/target/
+
+# Local runtime data and secrets
+data/
+.runtime/
+_legacy_baseline/
+.env
+*.log
+*.pid
+
+# Local reports: keep generated benchmark evidence outside Git
+docs/reports/
+docs/*.docx
+docs/*.pdf
+
+# Interview / resume-oriented notes (not product source)
+docs/STAR_PROJECT_STORY.md
+docs/BACKEND_RESUME_IMPLEMENTATION.md
+docs/EVALUATION_V2_PLAN.md
+docs/ENTERPRISE_GOLD_COLLECTION_PROTOCOL.md
+docs/DEVELOPMENT_PLAN.md
+docs/REQUIREMENTS_TRACEABILITY.md
+docs/FINAL_ACCEPTANCE_REPORT.md
+
+# Python packaging
+agent-service/**/*.egg-info/
+
+# IDE / OS
+.idea/
+.vscode/
+*.iml
+.DS_Store
+Thumbs.db

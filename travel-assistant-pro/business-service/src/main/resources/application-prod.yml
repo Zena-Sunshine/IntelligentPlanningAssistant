@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    url: ${DATABASE_URL:jdbc:mysql://localhost:3307/voyageiq?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC}
+    username: ${DATABASE_USERNAME:voyageiq}
+    password: ${DATABASE_PASSWORD:voyageiq_dev}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+

@@ -1,0 +1,18 @@
+{
+  "name": "VoyageIQ 240-case product contract",
+  "cases": 240,
+  "sha256": "a2431be362c0d1fb283220e923b68a64f85fc80912de44a04d026218ba1d2157",
+  "sourceType": "deterministic_product_contract",
+  "eligibleForGeneralizationMetric": false,
+  "warning": "Synthetic contract coverage only; not an independent human-language evaluation.",
+  "strata": {
+    "multi_intent": 30,
+    "side_effect_guard": 30,
+    "single_approval_create": 30,
+    "single_approval_status": 30,
+    "single_general": 30,
+    "single_policy_query": 30,
+    "single_travel_search": 30,
+    "single_trip_plan": 30
+  }
+}

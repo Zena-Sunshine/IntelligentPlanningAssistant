@@ -1,0 +1,46 @@
+services:
+  mysql:
+    image: mysql:8.4
+    environment:
+      MYSQL_DATABASE: voyageiq
+      MYSQL_USER: voyageiq
+      MYSQL_PASSWORD: voyageiq_dev
+      MYSQL_ROOT_PASSWORD: root_dev_only
+    ports:
+      - "3307:3306"
+    volumes:
+      - voyageiq_mysql:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-proot_dev_only"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  redis:
+    image: redis:7.4-alpine
+    ports:
+      - "6380:6379"
+    command: ["redis-server", "--appendonly", "yes"]
+    volumes:
+      - voyageiq_redis:/data
+
+  rabbitmq:
+    image: rabbitmq:4.1-management-alpine
+    environment:
+      RABBITMQ_DEFAULT_USER: voyageiq
+      RABBITMQ_DEFAULT_PASS: voyageiq_dev
+    ports:
+      - "5673:5672"
+      - "15673:15672"
+    volumes:
+      - voyageiq_rabbitmq:/var/lib/rabbitmq
+    healthcheck:
+      test: ["CMD", "rabbitmq-diagnostics", "-q", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+volumes:
+  voyageiq_mysql:
+  voyageiq_redis:
+  voyageiq_rabbitmq:

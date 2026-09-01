@@ -1,0 +1,21 @@
+[
+  {"id":"S01","query":"查一下北京明天的天气","expected":["travel_search"]},
+  {"id":"S02","query":"看看后天杭州到上海的机票","expected":["travel_search"]},
+  {"id":"S03","query":"查询深圳的酒店候选","expected":["travel_search"]},
+  {"id":"S04","query":"北京住宿报销标准是多少","expected":["policy_query"]},
+  {"id":"S05","query":"差旅报销需要准备哪些材料","expected":["policy_query"]},
+  {"id":"S06","query":"公司对国内航班舱位有什么规定","expected":["policy_query"]},
+  {"id":"S07","query":"帮我规划明天杭州到上海的差旅行程","expected":["trip_plan"]},
+  {"id":"S08","query":"制定后天去北京的出差安排","expected":["trip_plan"]},
+  {"id":"M01","query":"后天去北京，看看机票和酒店，顺便说下住宿报销标准","expected":["travel_search","policy_query"]},
+  {"id":"M02","query":"查上海明天的天气，再告诉我当地住宿差标","expected":["travel_search","policy_query"]},
+  {"id":"M03","query":"看看杭州到深圳的航班，同时核对机票报销规定","expected":["travel_search","policy_query"]},
+  {"id":"M04","query":"查询成都酒店，并说明住宿超标怎么审批","expected":["travel_search","policy_query"]},
+  {"id":"M05","query":"后天去武汉出差，查机票酒店和差旅报销材料","expected":["travel_search","policy_query"]},
+  {"id":"M06","query":"看看北京天气，再告诉我高铁和机票的差旅标准","expected":["travel_search","policy_query"]},
+  {"id":"M07","query":"查询上海酒店候选，顺便解释预算和差标的区别","expected":["travel_search","policy_query"]},
+  {"id":"M08","query":"查一下深圳航班和酒店，公司对住宿有什么规定","expected":["travel_search","policy_query"]},
+  {"id":"M09","query":"看看明天南京天气，还需要哪些报销材料","expected":["travel_search","policy_query"]},
+  {"id":"M10","query":"查询广州机票，同时核对交通费用报销政策","expected":["travel_search","policy_query"]}
+]
+

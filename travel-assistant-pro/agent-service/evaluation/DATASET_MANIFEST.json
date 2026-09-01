@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "datasets": [
+    {
+      "id": "voyageiq-dev-regression-v1",
+      "path": "task_completeness_cases.json",
+      "cases": 18,
+      "humanAuthoredForThisImplementation": true,
+      "eligibleForFinalMetrics": false,
+      "purpose": "defect reproduction and regression only"
+    },
+    {
+      "id": "crosswoz-external-holdout-v1",
+      "path": "datasets/crosswoz_external_holdout.jsonl",
+      "source": "https://github.com/thu-coai/CrossWOZ",
+      "sourceCommit": "df82c9fdff91b9b130f2d6b89110d3870ba6260e",
+      "upstreamSplit": "test",
+      "license": "Apache-2.0",
+      "citation": "Zhu et al., CrossWOZ, TACL 2020",
+      "cases": 600,
+      "humanAuthored": true,
+      "textTransformed": false,
+      "sha256": "393d5d70cc4458441112e71c13e4716b4327217e82df4bcb0db02e7591412a47",
+      "eligibleForFinalMetrics": false,
+      "purpose": "limited external language benchmark",
+      "scope": ["travel_search", "unsupported-domain general"],
+      "notCovered": ["trip_plan", "policy_query", "approval_create", "approval_status", "tool arguments", "answer quality"]
+    }
+  ]
+}
