@@ -53,3 +53,4 @@ home_big.png
 **/dist/
 **/test-results/
 **/playwright-report/
+**/*.tsbuildinfo
